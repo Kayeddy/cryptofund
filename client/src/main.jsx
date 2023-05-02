@@ -6,6 +6,7 @@ import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
 
 // Local imports
 import App from "./App";
+import "./main.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
