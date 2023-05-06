@@ -1,19 +1,20 @@
-// Global imports
 import React from "react";
-import ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
 
-// Local imports
+import { StateContextProvider } from "./context";
 import App from "./App";
 import "./main.css";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = createRoot(document.getElementById("root"));
 
 root.render(
-  <ThirdwebProvider chainId={ChainId.Goerli}>
+  <ThirdwebProvider desiredChainId={ChainId.Goerli}>
     <Router>
-      <App />
+      <StateContextProvider>
+        <App />
+      </StateContextProvider>
     </Router>
   </ThirdwebProvider>
 );
