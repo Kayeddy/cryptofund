@@ -71,6 +71,14 @@ export const StateContextProvider = ({ children }) => {
     return data;
   };
 
+  /*
+  const donateToCampaign = async (id, value) => {
+    const data = await contract.call("donateToCampaign", id, contractAddress, value);
+
+    return data;
+  };
+  */
+
   const getDonations = async (pid) => {
     const donations = await contract.call("getDonators", pid);
     const numberOfDonations = donations[0].length;
